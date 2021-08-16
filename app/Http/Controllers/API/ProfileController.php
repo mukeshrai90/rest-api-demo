@@ -54,7 +54,7 @@ class ProfileController extends BaseController
      
         $destinationPath = public_path('/thumbnail');
         $img = Image::make($image->path());
-        $img->resize(100, 100, function ($constraint) {
+        $img->resize(256, 256, function ($constraint) {
             $constraint->aspectRatio();
         })->save($destinationPath.'/'.$input['avatar']);
    
