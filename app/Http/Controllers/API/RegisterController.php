@@ -33,7 +33,7 @@ class RegisterController extends BaseController
         $input['password'] = bcrypt($input['password']);
         $input['registered_at'] = date('Y-m-d H:i:s');
         $input['verification_code'] = mt_rand(100000, 999999);
-        
+         
 		$user = User::create($input);
         
 		$success['token'] =  $user->createToken('MyApp')->accessToken;

@@ -48,7 +48,7 @@ class ProfileController extends BaseController
             return $this->sendError('Validation Error.', $validator->errors());       
         }
 		$input = $request->all();
-		
+		 
 		$image = $request->file('avatar');
         $input['avatar'] = time().'.'.$image->extension();
      
